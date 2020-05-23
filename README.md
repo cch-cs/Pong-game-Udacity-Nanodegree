@@ -21,12 +21,12 @@ The winner of the game is the first one to score 30 points. The "player one" can
 3. Compile: `cmake .. && make`
 4. Run it: `./Pong`.
 
-## List of rubric points addressed.
-# Loops, Functions, I/O
+# List of rubric points addressed.
+## Loops, Functions, I/O
 1. The project code compiles and runs without any errors.
 2. While loop is used in file "main.cpp" in line "19" to run the game in the loop.
 3. The project reads the inputs from the user, which is shown in the file "controller.cpp" in the function given in line "4".
-# Object Oriented Programming
+## Object Oriented Programming
 4. The project code is clearly organised into classes in various files.
 5. The project is organised into classes with class attributes and class methods in the files "controller.h, controller.cpp, game.h, game.cpp, renderer.h, renderer.cpp".
 6. All class data members are explicitly specified as public and private in the above mentioned files.
@@ -34,6 +34,6 @@ The winner of the game is the first one to score 30 points. The "player one" can
 8. Comments are provided for all the class functions to describe its purpose.
 9. All the class members are private and are accessed by member functions(getters).
 10. Composition is used which can be seen in the file "game.h" in the lines "40 & 41".
-# Memory Management
+## Memory Management
 11. All the member functions of the class use pass-by-reference except one function in file "renderer.h" in line "19", as arrays can't be passed by reference.
 12. The project uses one smart pointer "unique_ptr" in the file "main.cpp" in the line "26".
