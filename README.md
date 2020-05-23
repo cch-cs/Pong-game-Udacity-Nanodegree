@@ -2,7 +2,7 @@
 
 This is a game developed for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The Capstone project considered is Capstion Option 2. The Game developed is Pong. It is a two player game.
 
-The winner of the game is the first one to score 30 points. The "player one" can control the paddle using the Up and Down arrows and the "player two" can control the paddle using the number 8 and 2 in the numpad.
+The winner of the game is the first one to score 30 points. The "player 1" can control the paddle using the Up and Down arrows and the "player 2" can control the paddle using the number 8 and 2 in the numpad.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
