@@ -1,7 +1,8 @@
 #include "renderer.h"
 #include <iostream>
 #include <string>
-
+// Constructor initialzes the screen width and height and defines the 
+// _window and _renderer objects
 Renderer::Renderer(int width, int height):_width(width),_height(height){
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
         std::cerr << "Failed at SDL_Init()" << std::endl;
@@ -19,33 +20,22 @@ Renderer::Renderer(int width, int height):_width(width),_height(height){
         std::cerr << "Renderer could not be created.\n";
         std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
     }
-
-
-    //change the background color
-    //SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
-
-    // Clear the entire screen to our selected color.
-    //SDL_RenderClear(_renderer);
-
-    // Up until now everything was drawn behind the scenes.
-    // This will show the new, red contents of the window.
-    //SDL_RenderPresent(_renderer);
 }
-
+// Destructor destroys the _renderer and _window objects and quits the SDL
 Renderer::~Renderer(){
     SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
     SDL_Quit();
 }
-
+// getWidth function returns the width of the screen
 const int Renderer::getWidth() const{
     return _width;
 }
-
+// getHeight function returns the height of the screen
 const int Renderer::getHeight() const{
     return _height;
 }
-
+// render function renders the paddles and the ball on the screen
 const void Renderer::render(const SDL_Rect& left_paddle, const SDL_Rect& right_paddle, const SDL_Rect& ball) const{
     SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
     SDL_RenderClear(_renderer);
@@ -56,20 +46,8 @@ const void Renderer::render(const SDL_Rect& left_paddle, const SDL_Rect& right_p
     SDL_RenderFillRect(_renderer, &ball);
     SDL_RenderPresent(_renderer);
 }
-
-const void Renderer::left_paddle_render(const SDL_Rect& left_paddle) const{
-    SDL_RenderFillRect(_renderer, &left_paddle);
-}
-
-const void Renderer::right_paddle_render(const SDL_Rect& right_paddle) const{
-    SDL_RenderFillRect(_renderer, &right_paddle);
-}
-
-const void Renderer::ball_render(const SDL_Rect& ball) const{
-    SDL_RenderFillRect(_renderer, &ball);
-}
-
-const void Renderer::render_score(const int score[2], const int& fps) const{
+// write_score function prints the score and the winner on the title of the window
+const void Renderer::write_score(const int score[2], const int& fps) const{
     std::string title;
     if(score[0] == 30)
         title = "Game Over Player 1 has won the Game!!!!!!!!!!!!!";

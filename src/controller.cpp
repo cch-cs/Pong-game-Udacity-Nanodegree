@@ -1,5 +1,6 @@
 #include "controller.h"
-
+//input function gets the input from the user and moves the appropriate paddle
+//if the game is still running
 const void Controller::input(bool& running){
     SDL_Event e;
     const Uint8 *keystates = SDL_GetKeyboardState(nullptr);
@@ -38,11 +39,11 @@ const void Controller::input(bool& running){
         }
     }
 }
-
+//getDirection function to get the current direction of the respective paddle
 const Controller::Direction Controller::getDirection() const{
     return _direction;
 }
-
+//getPaddle function to get the current paddle getting input from user
 const Controller::Paddle Controller::getPaddle() const{
     return _paddle;
 }
